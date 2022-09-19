@@ -2,17 +2,19 @@
 public class CoffeeMachine 
 {
 	public static void main(String[] args) {
-		int cofeeAmount = 2330;
+		int coffeeAmount = 2330;
 		int milkAmount = 3210;
-		int skimmedMilk = 1600;
+		int skimmedMilkAmount = 1600;
+	
 		
-		
-		int cappucinoMilkRequird = 60;
-		int cappucinoCoffeRequired = 15;
+		int cappucinoMilkRequired = 60;
+		int cappucinoCoffeeRequired = 15;
 		
 		boolean isBlocked = true;
 		
-		if (!isBlocked && milkAmount >= cappucinoMilkRequird && cofeeAmount >= cappucinoCoffeRequired)
+		if (!isBlocked && coffeeAmount >= cappucinoCoffeeRequired ||	//логічна помилка!
+				skimmedMilkAmount >= cappucinoMilkRequired ||			//вираз дасть тру, через пріорітет виконання операторів
+			milkAmount >= cappucinoMilkRequired) 
 		{
 			System.out.println("Готуємо каву!");
 		}
@@ -21,7 +23,7 @@ public class CoffeeMachine
 			System.out.println("Кавомашина заблокована!");
 		}
 		
-		if (skimmedMilk >= cappucinoMilkRequird || milkAmount >= cappucinoMilkRequird)
+		if (skimmedMilkAmount >= cappucinoMilkRequired || milkAmount >= cappucinoMilkRequired)
 		{
 			System.out.println("Готуємо капучино...");
 		}
