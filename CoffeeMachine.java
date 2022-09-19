@@ -10,6 +10,17 @@ public class CoffeeMachine
 		int cappucinoMilkRequird = 60;
 		int cappucinoCoffeRequired = 15;
 		
+		boolean isBlocked = true;
+		
+		if (!isBlocked && milkAmount >= cappucinoMilkRequird && cofeeAmount >= cappucinoCoffeRequired)
+		{
+			System.out.println("Готуємо каву!");
+		}
+		else
+		{
+			System.out.println("Кавомашина заблокована!");
+		}
+		
 		if (skimmedMilk >= cappucinoMilkRequird || milkAmount >= cappucinoMilkRequird)
 		{
 			System.out.println("Готуємо капучино...");
