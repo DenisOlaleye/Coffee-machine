@@ -1,36 +1,30 @@
 
 public class CoffeeMachine 
 {
-	public static void main(String[] args) {
-		int coffeeAmount = 2330;
-		int milkAmount = 3210;
-		int skimmedMilkAmount = 1600;
+	public static void main(String[] args) 
+	{
+		int coffeeAmount = 100;
+		int milkAmount = 100;
+		int skimmedMilkAmount = 1;
 	
 		
 		int cappucinoMilkRequired = 60;
 		int cappucinoCoffeeRequired = 15;
 		
-		boolean isBlocked = true;
+		boolean isBlocked = false;
+		boolean milkIsEnough = skimmedMilkAmount >= cappucinoMilkRequired || milkAmount >= cappucinoMilkRequired;
 		
-		if (!isBlocked && coffeeAmount >= cappucinoCoffeeRequired ||	//логічна помилка!
-				skimmedMilkAmount >= cappucinoMilkRequired ||			//вираз дасть тру, через пріорітет виконання операторів
-			milkAmount >= cappucinoMilkRequired) 
+//спростили умову нижче додавши змінну isMilkEnough
+		
+		if (!isBlocked && coffeeAmount >= cappucinoCoffeeRequired && milkIsEnough)	
 		{
 			System.out.println("Готуємо каву!");
 		}
 		else
 		{
-			System.out.println("Кавомашина заблокована!");
+			System.out.println("Щось пішло не так! ");
 		}
 		
-		if (skimmedMilkAmount >= cappucinoMilkRequired || milkAmount >= cappucinoMilkRequired)
-		{
-			System.out.println("Готуємо капучино...");
-		}
-		else 
-		{ 
-			System.out.println("Не вистачає кави...");
-		}
 	}
 
 }
